@@ -1,51 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/28 20:20:32 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/03 13:20:40 by mreboux          ###   ########.fr       */
+/*   Created: 2026/02/03 16:02:38 by mreboux           #+#    #+#             */
+/*   Updated: 2026/02/03 16:33:02 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+int	ft_any(char **tab, int (*f)(char*))
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	i = 0;
+	while (tab[i] != NULL)
 	{
-		write(1, "-2147483648", 11);
-		return (0);
+		if (f(tab[i]) != 0)
+			return (1);
+		i++;
 	}
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb = -nb;
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb + '0');
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+	return (0);
 }
 /*
-int main()
+int	f(char *str)
 {
-	ft_putnbr(-86);	
-//	ft_putnbr(86);
-//	ft_putnbr(0);
-	ft_putnbr(-2147483648);
-//	ft_putnbr(2147483647);
+	int	i;
+
+	i = 0;
+	while(str[i])
+	{
+		if (str[i] == 'a')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	main(void)
+{
+	char	*tab[] = {"hallo", "world", NULL};
+
+	printf("%d", ft_any(tab, &f));
+	return (0);
 }
 */

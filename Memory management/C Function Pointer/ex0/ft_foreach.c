@@ -1,51 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/28 20:20:32 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/03 13:20:40 by mreboux          ###   ########.fr       */
+/*   Created: 2026/02/03 13:21:40 by mreboux           #+#    #+#             */
+/*   Updated: 2026/02/03 14:33:23 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	i = 0;
+	while (i < length)
 	{
-		write(1, "-2147483648", 11);
-		return (0);
-	}
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb = -nb;
-	}
-	if (nb <= 9)
-	{
-		ft_putchar(nb + '0');
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		f(tab[i]);
+		i++;
 	}
 }
 /*
-int main()
+void	f(int c)
 {
-	ft_putnbr(-86);	
-//	ft_putnbr(86);
-//	ft_putnbr(0);
-	ft_putnbr(-2147483648);
-//	ft_putnbr(2147483647);
+	#include <stdio.h>
+	printf("%d", c);
+}
+
+int	main(void)
+{
+	int tab[] = {49, 2, 3, 4, 5, 6};
+	int length;
+	int i;
+
+	i = 0;
+	length = 6;
+	ft_foreach(tab, length,&f);
+	
+	return (0);
 }
 */
