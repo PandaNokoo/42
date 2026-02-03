@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 13:16:04 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/02 19:15:11 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/03 09:52:44 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	ft_str_is_printable(char *str)
 			return (0);
 		i++;
 	}
-	return(1);
+	return (1);
 }
-
+/*
 int	main(void)
 {
 	char *string;
@@ -33,4 +33,4 @@ int	main(void)
    	printf("%d", ft_str_is_printable(string));
 	return (0);
 }
-
+*/

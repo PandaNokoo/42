@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 13:02:12 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/02 19:51:32 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/03 09:23:16 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ int	ft_str_is_lowercase(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-		}
-		else
+		if (!(str[i] >= 'a' && str[i] <= 'z'))
 		{
 			return (0);
 		}

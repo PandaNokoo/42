@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 18:39:44 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/02 19:03:40 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/03 11:47:51 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_putstr_non_printable(char *str)
 	int		i;
 	char	*hexa;
 
+	i = 0;
 	hexa = "0123456789abcdef";
 	while (str[i])
 	{
@@ -39,7 +40,7 @@ void	ft_putstr_non_printable(char *str)
 /*
 int	main(void)
 {
-	char string[] = "Hello\nHow are you ?";
+	char string[] = "Hello\nHow ~ are you ?";
 	ft_putstr_non_printable(string);
 	return (0);
 }
