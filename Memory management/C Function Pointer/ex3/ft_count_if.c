@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:35:23 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/03 16:52:20 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/04 13:08:29 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_count_if(char **tab, int length, int (*f)(char*))
 
 	i = 0;
 	nb = 0;
-	while (i < length - 1)
+	while (i < length)
 	{
 		if (f(tab[i]) != 0)
 			nb++;

@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 17:04:45 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/03 18:08:39 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/04 14:28:21 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 /*
 int	f(int a, int b)
 {
-	return (a - b);
+	if (a == b)
+		return (0);
+	return (b - a);
 }
 
 int	main(void)
@@ -57,6 +59,7 @@ int	main(void)
 	int	tab[] = {1,2,3,4,5};
 	int	tab2[] = {5,4,3,2,1};
 	int	tab3[] = {1,3,2,4,5};
+	int	tab4[] = {5,5,1,2,3};
 	int	length;
 
 	length = 5;
@@ -64,6 +67,7 @@ int	main(void)
 	printf("%d\n", ft_is_sort(tab, length, &f));
 	printf("%d\n", ft_is_sort(tab2, length, &f));
 	printf("%d\n", ft_is_sort(tab3, length, &f));
+	printf("%d\n", ft_is_sort(tab4, length, &f));
 	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:04:59 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/03 15:58:38 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/04 16:27:46 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	*ft_map(int *tab, int length, int (*f)(int))
 	int	*ret;
 
 	i = 0;
-	ret = (int *)malloc(sizeof(int) * length);
+	ret = malloc(sizeof(int) * length);
 	if (!ret)
 		return (NULL);
 	while (i < length)
