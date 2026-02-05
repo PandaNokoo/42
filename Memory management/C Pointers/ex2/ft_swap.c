@@ -6,13 +6,13 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 15:30:54 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/01 19:48:01 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/05 17:03:05 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
+
 #include <stdio.h>
-*/
+
 void	ft_swap(int *a, int *b)
 {
 	int	temp;
@@ -21,7 +21,7 @@ void	ft_swap(int *a, int *b)
 	*a = *b;
 	*b = temp;
 }
-/*
+
 int	main(void)
 {
 	int	a;
@@ -30,4 +30,3 @@ int	main(void)
 	ft_swap(&a, &b);
 	printf("%d et %d", a, b);
 }
-*/

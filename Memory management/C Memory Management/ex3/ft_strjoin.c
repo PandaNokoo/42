@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 19:09:05 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/05 15:55:03 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/05 16:26:07 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ char	*ft_strcpy(int size, char **strs, char *sep, char *copy)
 	int	j;
 	int	y;
 
-	i = 0;
+	i = -1;
 	y = 0;
-	while(i < size)
+	while (++i < size)
 	{
 		j = 0;
-		while (strs[i][j]);
+		while (strs[i][j])
 		{
 			copy[y] = strs[i][j];
 			j++;
@@ -46,7 +46,6 @@ char	*ft_strcpy(int size, char **strs, char *sep, char *copy)
 			j++;
 			y++;
 		}
-		i++;
 	}
 	copy[y] = '\0';
 	return (copy);
@@ -63,7 +62,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	if (size == 0)
 	{
 		join = malloc(sizeof(char));
-		*join = 0;
+		join = '\0';
 		return (join);
 	}
 	while (i < size)
@@ -78,10 +77,10 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	join = ft_strcpy(size, strs, sep, join);
 	return (join);
 }
-
+/*
 int	main(void)
 {
-	int	size;
+	int		size;
 	char	*join;
 	char	*strs[] = {"WELCOME", "TO", "MY", "WORLD"};
 	char	*sep = {", "};
@@ -90,5 +89,7 @@ int	main(void)
 	join = ft_strjoin(size, strs, sep);
 	#include <stdio.h>
 	printf("%s", join);
+	free(join);
 	return (0);
 }
+*/

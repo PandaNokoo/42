@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 14:38:04 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/04 15:20:28 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/05 14:08:17 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ char	*ft_strdup(char *src)
 int	main(void)
 {
 	char	*src;
+	char	*dup;
 
 	src = "test";
+	dup = ft_strdup(src);
 	#include <stdio.h>
-	printf("%s", ft_strdup(src));
+	printf("%s", dup);
 	return (0);
 }
 */

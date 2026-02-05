@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 17:04:45 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/04 14:28:21 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/05 13:23:08 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_decroissant(int *tab, int length, int (*f)(int, int))
 
 int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
-	if ((ft_croissant(tab, length, f) == 1)
+	if ((ft_croissant(tab, length, f) == 1) 
 		|| (ft_decroissant(tab, length, f) == 1))
 		return (1);
 	else
