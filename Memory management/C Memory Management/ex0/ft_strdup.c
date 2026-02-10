@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 14:38:04 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/05 14:08:17 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/10 15:14:35 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(char *src)
 	char	*dup;
 
 	i = 0;
+	if (!src)
+		return (NULL);
 	dup = malloc(sizeof(char));
 	if (!dup)
 		return (NULL);

@@ -6,48 +6,30 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 17:13:02 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/08 18:42:12 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/10 18:09:59 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-int	ft_strlen(char *str)
+int		ft_strlen(char *str);
+int		ft_str_is_alphanum(char c);
+int		wrong_base(char *base);
+void	ft_create_nbr_base(int nbr, char *base, char *convert, int *index);
+
+int	ft_find_index(char c, char *base)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-int	ft_str_is_alphanum(char c)
-{
-	if ((c >= 'a' && c <= 'z'))
-		return (1);
-	if ((c >= 'A' && c <= 'Z'))
-		return (1);
-	if ((c >= '0' && c <= '9'))
-		return (1);
-	return (0);
-}
-
-char	*wrong_base(char *nbr, char *base_from, char *base_to)
-{
-	int	i;
-	
-	i = 0;
-	if (ft_strlen(base_from) <= 1 || ft_strlen(base_to) <= 1)
-		return (NULL);
-	while (base_from[i] || base_to[i])
+	while (base[i])
 	{
-		if (!(ft_is_alphanum(base_from[i])))
-			return (NULL);
-		if (!(ft_is_alphanum(base_to[i])))
-			return (NULL);
+		if (c == base[i])
+			return (i);
 		i++;
 	}
+	return (-1);
 }
 
 int	ft_atoi_base(char *nbr, char *base)
@@ -60,45 +42,49 @@ int	ft_atoi_base(char *nbr, char *base)
 	nombre = 0;
 	i = 0;
 	while ((nbr[i] >= 9 && nbr[i] <= 13) || nbr[i] == ' ')
-	       i++;
+		i++;
 	while ((nbr[i] == '+' || nbr[i] == '-'))
 	{
 		if (nbr[i] == '-')
 			signe = -signe;
 		i++;
 	}
-	while(str[i])
+	while (nbr[i])
 	{
+		if (ft_find_index(nbr[i], base) == -1)
+			return (nombre * signe);
+		nombre = (nombre * ft_strlen(base)) + ft_find_index(nbr[i], base);
+		i++;
 	}
-	return (nbr * signe);
+	return (nombre * signe);
 }
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	int		i;
+	int		nombre;
 	char	*convert;
-	
-	i = 0;
-	convert = malloc(sizeof(char) * ft_strlen(nbr) + 1);
-	while(nbr[i] != '\0')
-	{
-		convert[i] = base_to[nbr[i] / ft_strlen(base_to)];
-		convert[i] = base_to[nbr[i] % ft_strlen(base_to)];
-		i++;
-	}
-	return (convert);
-	free(convert);
-}
 
+	i = 0;
+	if (wrong_base(base_from) || wrong_base(base_to))
+		return (NULL);
+	nombre = ft_atoi_base(nbr, base_from);
+	convert = malloc(sizeof(char) * 34);
+	if (!convert)
+		return (NULL);
+	ft_create_nbr_base(nombre, base_to, convert, &i);
+	convert[i] = '\0';
+	return (convert);
+}
+/*
 int	main(void)
 {
-	char	*nbr = "10";
+	char	*nbr = "-2147483647";
 	char	*base_from = "0123456789";
-	char	*base_to = "0123456789ABCDEF";
+	char	*base_to = "01";
 	char	*convert;
-
 	convert = ft_convert_base(nbr, base_from, base_to);
-	#include <stdio.h>
 	printf("%s", convert);
 	return (0);
 }
+*/
