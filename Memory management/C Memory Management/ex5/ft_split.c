@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:23:55 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/10 18:11:26 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/10 18:45:29 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,17 +88,17 @@ char	**ft_split(char *str, char *charset)
 	int		i;
 	int		len;
 
-	i = 0;
 	if (!str || !charset)
 		return (NULL);
 	mots = ft_nb_mots(str, charset);
 	split = malloc(sizeof(char *) * (mots + 1));
 	if (!split)
 		return (NULL);
+	i = 0;
 	while (i < mots)
 	{
-		while (str[i] && !ft_is_sep(str[i], charset))
-			i++;
+		while (*str && ft_is_sep(*str, charset))
+			str++;
 		len = ft_mot_len(str, charset);
 		split[i] = ft_strcpy(str, len);
 		if (!split[i])
@@ -106,10 +106,10 @@ char	**ft_split(char *str, char *charset)
 		str += len;
 		i++;
 	}
-	split[i] = '\0';
+	split[i] = NULL;
 	return (split);
 }
-
+/*
 int	main(void)
 {
 	char *str = "test test2 test";
@@ -130,4 +130,4 @@ int	main(void)
 		i++;
 	}
 	return (0);
-}
+}*/

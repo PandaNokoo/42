@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 19:09:05 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/05 16:26:07 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/10 21:14:56 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	if (size == 0)
 	{
 		join = malloc(sizeof(char));
-		join = '\0';
+		join = "";
 		return (join);
 	}
 	while (i < size)

@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 16:45:35 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/09 17:14:34 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/10 21:16:00 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,9 @@ int	wrong_base(char *base)
 
 void	ft_create_nbr_base(int nbr, char *base, char *convert, int *index)
 {
-	int	i;
 	int	nombre;
 	int	base_len;
 
-	i = 0;
 	nombre = nbr;
 	base_len = ft_strlen(base);
 	if (nombre < 0)
