@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 16:45:35 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/10 21:16:00 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/11 13:24:23 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,6 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_str_is_alphanum(char c)
-{
-	if ((c >= 'a' && c <= 'z'))
-		return (1);
-	if ((c >= 'A' && c <= 'Z'))
-		return (1);
-	if ((c >= '0' && c <= '9'))
-		return (1);
-	return (0);
-}
-
 int	wrong_base(char *base)
 {
 	int	i;
@@ -44,7 +33,7 @@ int	wrong_base(char *base)
 		return (1);
 	while (base[i])
 	{
-		if (!(ft_str_is_alphanum(base[i])))
+		if (base[i] == '+' || base[i] == '-' || base[i] == ' ')
 			return (1);
 		i++;
 	}

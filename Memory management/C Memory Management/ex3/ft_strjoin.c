@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 19:09:05 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/10 21:14:56 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/11 14:46:26 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	if (size == 0)
 	{
 		join = malloc(sizeof(char));
-		join = "";
+		join[0] = '\0';
 		return (join);
 	}
 	while (i < size)
@@ -71,7 +71,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		i++;
 	}
 	len += ft_strlen(sep) * (size - 1);
-	join = malloc(sizeof(char) * len + 1);
+	join = malloc(sizeof(char) * (len + 1));
 	if (!join)
 		return (NULL);
 	join = ft_strcpy(size, strs, sep, join);
@@ -85,7 +85,7 @@ int	main(void)
 	char	*strs[] = {"WELCOME", "TO", "MY", "WORLD"};
 	char	*sep = {", "};
 
-	size = 4;
+	size = 0;
 	join = ft_strjoin(size, strs, sep);
 	#include <stdio.h>
 	printf("%s", join);

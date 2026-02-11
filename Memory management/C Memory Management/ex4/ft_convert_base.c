@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 17:13:02 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/10 18:09:59 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/11 13:31:53 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <stdio.h>
 
 int		ft_strlen(char *str);
-int		ft_str_is_alphanum(char c);
 int		wrong_base(char *base);
 void	ft_create_nbr_base(int nbr, char *base, char *convert, int *index);
 

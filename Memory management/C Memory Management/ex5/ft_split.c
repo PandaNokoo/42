@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:23:55 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/10 18:45:29 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/11 13:27:32 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ char	**ft_split(char *str, char *charset)
 		str += len;
 		i++;
 	}
-	split[i] = NULL;
+	split[i] = '\0';
 	return (split);
 }
 /*
@@ -130,4 +130,5 @@ int	main(void)
 		i++;
 	}
 	return (0);
-}*/
+}
+*/
