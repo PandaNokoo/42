@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/11 19:43:59 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/12 14:57:08 by mreboux          ###   ########.fr       */
+/*   Created: 2026/02/12 14:07:51 by mreboux           #+#    #+#             */
+/*   Updated: 2026/02/12 14:59:11 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
+	int	y;
 
 	i = 0;
-	while (src[i])
+	if (to_find[0] == '\0')
+		return (str);
+	while (str[i])
 	{
-		dest[i] = src[i];
+		y = 0;
+		while (str[i + y] == to_find[y] && to_find[y] != '\0')
+			y++;
+		if (to_find[y] == '\0')
+			return (&str[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }
 /*
 int	main(void)
 {
-	char	*src = "hello!";
-	char	dest[6];
+	char	*str = "Hello World";
+	char	*to_find = "Wo";
 	#include <stdio.h>
-	printf("%s", ft_strcpy(dest, src));
+	printf("%s", ft_strstr(str, to_find));
 	return (0);
 }
 */

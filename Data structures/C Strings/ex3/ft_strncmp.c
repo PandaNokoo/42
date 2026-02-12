@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/11 19:43:59 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/12 14:57:08 by mreboux          ###   ########.fr       */
+/*   Created: 2026/02/12 13:23:56 by mreboux           #+#    #+#             */
+/*   Updated: 2026/02/12 20:42:47 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
+	if (n == 0)
+		return (0);
+	while (i < n - 1 && s1[i] == s2[i] && s1[i])
 		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (s1[i] - s2[i]);
 }
-/*
+
 int	main(void)
 {
-	char	*src = "hello!";
-	char	dest[6];
+	char	*str1 = "tzti";
+	char	*str2 = "t9to";
+	int	n;
+	
+	n = 2;
 	#include <stdio.h>
-	printf("%s", ft_strcpy(dest, src));
+	printf("%d", ft_strncmp(str1, str2, n));
 	return (0);
 }
-*/
+

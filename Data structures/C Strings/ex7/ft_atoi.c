@@ -1,35 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/11 19:43:59 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/12 14:57:08 by mreboux          ###   ########.fr       */
+/*   Created: 2026/02/12 14:31:43 by mreboux           #+#    #+#             */
+/*   Updated: 2026/02/12 14:59:23 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+#include <stdio.h>
+
+int	ft_atoi(char *str)
 {
+	int	signe;
+	int	nombre;
 	int	i;
 
+	signe = 1;
+	nombre = 0;
 	i = 0;
-	while (src[i])
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	while (str[i] == '+' || str[i] == '-')
 	{
-		dest[i] = src[i];
+		if (str[i] == '-')
+			signe = -signe;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nombre = nombre * 10 + (str[i] - '0');
+		i++;
+	}
+	return (nombre * signe);
 }
 /*
 int	main(void)
 {
-	char	*src = "hello!";
-	char	dest[6];
-	#include <stdio.h>
-	printf("%s", ft_strcpy(dest, src));
+	char *str = "  ---+--+1234ab567";
+	printf("%d", ft_atoi(str));
 	return (0);
 }
 */
