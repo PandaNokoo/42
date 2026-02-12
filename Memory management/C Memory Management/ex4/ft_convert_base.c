@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 17:13:02 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/11 13:31:53 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/12 14:36:05 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	convert[i] = '\0';
 	return (convert);
 }
-/*
+
 int	main(void)
 {
-	char	*nbr = "-2147483647";
+	char	*nbr = "--2147483647";
 	char	*base_from = "0123456789";
 	char	*base_to = "01";
 	char	*convert;
@@ -86,4 +86,4 @@ int	main(void)
 	printf("%s", convert);
 	return (0);
 }
-*/
+
