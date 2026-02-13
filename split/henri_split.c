@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_exam.c                                    :+:      :+:    :+:   */
+/*   henri_split.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 18:18:28 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/13 13:30:08 by mreboux          ###   ########.fr       */
+/*   Created: 2026/02/13 13:43:32 by mreboux           #+#    #+#             */
+/*   Updated: 2026/02/13 13:55:43 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	is_sep(char c)
 {
-	if (c == ' ' || c == '\t' || c == '\n')
-		return(1);
+	if (c == ' ' || c == '\n' || c == '\t')
+		return (1);
 	return (0);
 }
 
@@ -50,7 +50,7 @@ char	**ft_split(char *str)
 			i++;
 		if (i > j)
 		{
-			split[k] = malloc((i - j) + 1);
+			split[k] = malloc(i - j - 1);
 			ft_strncpy(split[k], &str[j], (i - j));
 			k++;
 		}
@@ -58,20 +58,20 @@ char	**ft_split(char *str)
 	split[k] = '\0';
 	return (split);
 }
-
-int	main(void)
+int     main(void)
 {
-	char *str = "test test2 test";
-	char **split;
-	int	i;
+        char *str = "test test2 test";
+        char **split;
+        int     i;
 
-	i = 0;
-	split = ft_split(str);
-	#include <stdio.h>
-	while (split[i])
-	{
-		printf("%s\n", split[i]);
-		i++;
-	}
-	return (0);
+        i = 0;
+        split = ft_split(str);
+        #include <stdio.h>
+        while (split[i])
+        {
+                printf("%s\n", split[i]);
+                i++;
+        }
+        return (0);
 }
+
