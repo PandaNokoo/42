@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 13:23:56 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/12 20:42:47 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/13 13:15:00 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		i++;
 	return (s1[i] - s2[i]);
 }
-
+/*
 int	main(void)
 {
 	char	*str1 = "tzti";
@@ -33,4 +33,4 @@ int	main(void)
 	printf("%d", ft_strncmp(str1, str2, n));
 	return (0);
 }
-
+*/
