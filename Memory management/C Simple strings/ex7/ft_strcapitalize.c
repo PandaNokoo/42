@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 16:27:11 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/02 18:38:45 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/19 15:48:35 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ char	*ft_strcapitalize(char *str)
 	}
 	return (str);
 }
-/*
 int	main(void)
 {
 	char string[] = "hello, how are you doing? 42words forty-two; fifty+and+one";
@@ -50,4 +49,3 @@ int	main(void)
 	printf("%s", ft_strcapitalize(string));
 	return (0);
 }
-*/

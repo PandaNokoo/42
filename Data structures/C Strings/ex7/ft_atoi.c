@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 14:31:43 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/12 14:59:23 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/19 13:40:28 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int	ft_atoi(char *str)
 	}
 	return (nombre * signe);
 }
-/*
+
 int	main(void)
 {
-	char *str = "  ---+--+1234ab567";
+	char *str = "  ----+++---1234ab567";
 	printf("%d", ft_atoi(str));
 	return (0);
 }
-*/
+

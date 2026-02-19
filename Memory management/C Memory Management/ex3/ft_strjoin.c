@@ -6,7 +6,7 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 19:09:05 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/11 14:46:26 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/02/19 17:02:55 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,9 @@ int	main(void)
 	int		size;
 	char	*join;
 	char	*strs[] = {"WELCOME", "TO", "MY", "WORLD"};
-	char	*sep = {", "};
+	char	*sep = ", ";
 
-	size = 0;
+	size = 4;
 	join = ft_strjoin(size, strs, sep);
 	#include <stdio.h>
 	printf("%s", join);

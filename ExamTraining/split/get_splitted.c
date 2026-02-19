@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   splitted.c                                         :+:      :+:    :+:   */
+/*   get_splitted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/13 13:30:24 by mreboux           #+#    #+#             */
-/*   Updated: 2026/02/19 19:01:04 by mreboux          ###   ########.fr       */
+/*   Created: 2026/02/19 13:25:24 by mreboux           #+#    #+#             */
+/*   Updated: 2026/02/19 13:49:55 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
 int	is_sep(char c)
@@ -30,19 +31,16 @@ char	*ft_strncpy(char *dest, char *src, int n)
 		i++;
 	}
 	dest[i] = '\0';
-	return (0);
+	return (dest);
 }
 
 char	**ft_split(char *str)
 {
-	int		i;
-	int		j;
-	int		k;
+	int 	i = 0;
+	int	j = 0;
+	int	k = 0;
 	char	**split;
-	
-	i = 0;
-	k = 0;
-	j = 0;
+
 	split = malloc(10000);
 	while(str[i])
 	{
@@ -57,15 +55,14 @@ char	**ft_split(char *str)
 			ft_strncpy(split[k], &str[j], (i - j));
 			k++;
 		}
-
 	}
 	split[k] = '\0';
 	return (split);
 }
 
-int	main(void)
+int     main(void)
 {
-	char *str = "     test test2 test";
+        char *str = "Aha\n? Who\t is\nAha\t?";
         char **split;
         int     i;
 
