@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 12:11:35 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/21 14:17:27 by mreboux          ###   ########.fr       */
+/*   Created: 2026/04/21 17:19:11 by mreboux           #+#    #+#             */
+/*   Updated: 2026/04/21 17:45:48 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int i)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	if (i >= 'a' && i <= 'z')
-		i -= 32;
-	return (i);
+	size_t	ld;
+	size_t	ls;
+	size_t	i;
+	size_t	res;
+
+	ld = ft_strlen(dest);
+	ls = ft_strlen(src);
+	res = 0;
+	i = 0;
+	if (size > ld)
+		res = ls + ld;
+	else
+		res = ls + size;
+	while (dest[i] && ld <= size)
+	{
+		dest[ld] = src[i];
+		ld++;
+		i++;
+	}
+	dest[ld] = '\0';
+	return (res);
 }
 /*
 int	main(void)
 {
-	int i;
-
-	i = 'W';
+	char dest[9] = "titi";
+	char *src  = "toto";
 	#include <stdio.h>
-   	printf("%c", ft_toupper(i));
+	printf("%d", ft_strlcat(dest, src, 3));
 	return (0);
-}*/
+}
+*/

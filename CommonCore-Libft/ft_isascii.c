@@ -6,9 +6,11 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:48:16 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/20 11:56:06 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/04/21 14:40:12 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int i)
 {

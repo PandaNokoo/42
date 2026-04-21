@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 12:11:35 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/21 14:17:27 by mreboux          ###   ########.fr       */
+/*   Created: 2026/04/21 18:04:24 by mreboux           #+#    #+#             */
+/*   Updated: 2026/04/21 18:17:02 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int i)
+char	*ft_strnstr(char *big, char *little, size_t len)
 {
-	if (i >= 'a' && i <= 'z')
-		i -= 32;
-	return (i);
+	int	i;
+	int	y;
+
+	i = 0;
+	if (little[0] == '\0')
+		return (big);
+	while (big[i])
+	{
+		y = 0;
+		while (big[i + y] == little[y] && little[y] != '\0')
+			y++;
+		if (little[y] == '\0' && ft_strlen(&big[i]) <= len)
+			return (&big[i]);
+		i++;
+	}
+	return (0);
 }
 /*
 int	main(void)
 {
-	int i;
-
-	i = 'W';
+	char	*big = "Hello World";
+	char	*little = "Wo";
 	#include <stdio.h>
-   	printf("%c", ft_toupper(i));
+	printf("%s", ft_strnstr(big, little, 5));
 	return (0);
-}*/
+}
+*/

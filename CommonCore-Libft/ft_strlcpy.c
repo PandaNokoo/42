@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 12:11:35 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/21 14:17:27 by mreboux          ###   ########.fr       */
+/*   Created: 2026/04/21 16:57:40 by mreboux           #+#    #+#             */
+/*   Updated: 2026/04/21 17:13:05 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int i)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	if (i >= 'a' && i <= 'z')
-		i -= 32;
+	size_t	i;
+
+	i = 0;
+	while (src[i] && i < size - 1)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
 	return (i);
 }
 /*
 int	main(void)
 {
-	int i;
-
-	i = 'W';
+	char	*src = "hello!";
+	char	dest[6];
 	#include <stdio.h>
-   	printf("%c", ft_toupper(i));
+	printf("%d", ft_strlcpy(dest, src, 5));
 	return (0);
-}*/
+}
+*/

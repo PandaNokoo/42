@@ -6,9 +6,11 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:33:05 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/20 11:36:33 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/04/21 14:41:01 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int i)
 {

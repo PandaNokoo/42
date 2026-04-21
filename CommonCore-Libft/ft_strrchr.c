@@ -6,16 +6,17 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 13:06:27 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/20 13:23:42 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/04/21 14:16:42 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	
 	while (s[i])
 		i++;
 	while (i >= 0)

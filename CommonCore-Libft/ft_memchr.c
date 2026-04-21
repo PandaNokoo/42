@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 12:11:35 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/21 14:17:27 by mreboux          ###   ########.fr       */
+/*   Created: 2026/04/21 13:56:33 by mreboux           #+#    #+#             */
+/*   Updated: 2026/04/21 15:45:48 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int i)
+void	*ft_memchr(void *s, int c, size_t n)
 {
-	if (i >= 'a' && i <= 'z')
-		i -= 32;
-	return (i);
+	size_t			i;
+	unsigned char	*ptr;
+
+	i = 0;
+	ptr = (unsigned char *)s;
+	while (i < n)
+	{
+		if (ptr[i] == (unsigned char)c)
+			return (&ptr[i]);
+		i++;
+	}
+	return (0);
 }
 /*
 int	main(void)
 {
-	int i;
-
-	i = 'W';
+	char	str[] = "tpti";
+	char	*res = ft_memchr(str, 'i', 2);
 	#include <stdio.h>
-   	printf("%c", ft_toupper(i));
+	printf("%s\n", res);
 	return (0);
-}*/
+}
+*/

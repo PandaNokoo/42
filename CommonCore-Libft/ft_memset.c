@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 12:11:35 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/21 14:17:27 by mreboux          ###   ########.fr       */
+/*   Created: 2026/04/21 13:11:09 by mreboux           #+#    #+#             */
+/*   Updated: 2026/04/21 14:12:36 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int i)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	if (i >= 'a' && i <= 'z')
-		i -= 32;
-	return (i);
+	size_t			i;
+	unsigned char	*ptr;
+
+	i = 0;
+	ptr = (unsigned char *)s;
+	while (i < n)
+	{
+		ptr[i] = (unsigned char)c;
+		i++;
+	}
+	return (s);
 }
 /*
 int	main(void)
 {
-	int i;
-
-	i = 'W';
+	char	str[] = "titi";
+	ft_memset(str, 'w', 2);
 	#include <stdio.h>
-   	printf("%c", ft_toupper(i));
+	printf("%s\n", str);
 	return (0);
 }*/

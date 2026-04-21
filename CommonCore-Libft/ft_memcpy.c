@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 12:11:35 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/21 14:17:27 by mreboux          ###   ########.fr       */
+/*   Created: 2026/04/21 15:51:03 by mreboux           #+#    #+#             */
+/*   Updated: 2026/04/21 16:40:24 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int i)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (i >= 'a' && i <= 'z')
-		i -= 32;
-	return (i);
+	size_t				i;
+	unsigned char		*destination;
+	const unsigned char	*source;
+
+	i = 0;
+	destination = (unsigned char *)dest;
+	source = (const unsigned char *)src;
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	while (i < n)
+	{
+		destination[i] = source[i];
+		i++;
+	}
+	destination[i] = '\0';
+	return (dest);
 }
 /*
 int	main(void)
 {
-	int i;
-
-	i = 'W';
+	char	*src = "hello!";
+	char	dest[6];
 	#include <stdio.h>
-   	printf("%c", ft_toupper(i));
+	printf("%s\n", ft_memcpy(dest, src, 4));
 	return (0);
-}*/
+}
+*/

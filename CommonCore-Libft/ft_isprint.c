@@ -6,9 +6,11 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:57:33 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/20 12:03:35 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/04/21 14:40:27 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int i)
 {

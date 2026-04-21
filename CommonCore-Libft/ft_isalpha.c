@@ -6,9 +6,11 @@
 /*   By: mreboux <mreboux@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:25:29 by mreboux           #+#    #+#             */
-/*   Updated: 2026/04/20 11:37:36 by mreboux          ###   ########.fr       */
+/*   Updated: 2026/04/21 14:40:42 by mreboux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int i)
 {
